@@ -1,0 +1,16 @@
+.button-refresh-home {
+    background-color: black;
+    border-radius: 60px;
+    height: 40px;
+    border: none;
+    width: 80px;
+    color: var(--primary-color);
+}
+
+.button-refresh-home:hover {
+   cursor: pointer;
+}
+
+.button-refresh-home:active {
+    transform: scale(0.95)
+}

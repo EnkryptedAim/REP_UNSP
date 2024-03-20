@@ -1,0 +1,17 @@
+.logo-container > a {
+    display: flex;
+    align-items: center;
+}
+
+.unslplash-logo {
+    object-fit: cover;
+    height: 40px;
+    object-position: center;
+}
+
+@media only screen and (max-width: 425px) {
+    .unslplash-logo {
+        height: 60px;
+    }
+    
+    }

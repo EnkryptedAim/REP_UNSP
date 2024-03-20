@@ -1,0 +1,153 @@
+.grid-container {
+    display: grid;
+    align-items: start;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .gallery {
+    width: 100%;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5vw;
+  }
+  
+  @media only screen and (max-width: 425px) {
+    .gallery{
+      gap: 20px;
+    }
+  }
+  
+  @media only screen and (max-width: 770px) and (min-width: 426px) {
+    .gallery > div:nth-child(1),
+    div:nth-child(8),
+    div:nth-child(11),
+    div:nth-child(17),
+    div:nth-child(27) {
+  grid-row: span 2;
+  }
+  
+  .gallery > div:nth-child(6),
+  div:nth-child(10),
+  div:nth-child(21) {
+  grid-column: span 2;
+  aspect-ratio: 2/1;
+  } 
+  }
+  
+  @media only screen and (max-width: 1024px) and (min-width: 770px) {
+    .gallery > div:nth-child(1),
+    div:nth-child(5),
+    div:nth-child(7),
+    
+    div:nth-child(13),
+    div:nth-child(14),
+    div:nth-child(19),
+    div:nth-child(21),
+    div:nth-child(28) {
+  grid-row: span 2;
+  }
+  
+  .gallery > div:nth-child(6),
+  div:nth-child(10),
+  div:nth-child(16),
+  div:nth-child(27) {
+  grid-column: span 2;
+  aspect-ratio: 2/1;
+  } 
+  }
+
+  @media only screen and (max-width: 1440px) and (min-width: 1025px) {
+    .gallery > div:nth-child(1),
+    div:nth-child(5),
+    div:nth-child(7),
+    
+    div:nth-child(13),
+    div:nth-child(19),
+    div:nth-child(21) {
+  grid-row: span 2;
+  }
+  
+  .gallery > div:nth-child(6),
+  div:nth-child(12),
+  div:nth-child(25),
+  div:nth-child(27) {
+  grid-column: span 2;
+  aspect-ratio: 2/1;
+  } 
+  }
+  
+  @media only screen and (min-width: 1441px) {
+    .gallery > div:nth-child(2),
+    div:nth-child(10),
+    div:nth-child(11),
+    div:nth-child(18),
+    div:nth-child(23),
+    div:nth-child(24) {
+  grid-row: span 2;
+  }
+  
+  .gallery > div:nth-child(9),
+  div:nth-child(13),
+  div:nth-child(21),
+  div:nth-child(26),
+  div:nth-child(28),
+  div:nth-child(30) {
+  grid-column: span 2;
+  aspect-ratio: 2/1;
+  } 
+  }
+
+.card-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px; 
+    overflow: hidden;
+    box-shadow: rgba(99, 99, 99, 1) 0px 2px 8px 0px;
+    aspect-ratio: 1/1;
+}
+
+.card-container:hover {
+    cursor: pointer;
+    transform: scale(1.05)
+}
+
+.card-container > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+}
+
+.description-container {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--secondary-color);
+    opacity: 0.8;
+}
+
+.description-container > a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: large;
+}
+
+/* Styles for the image container when hovered */
+.card-container:hover {
+    position: relative; /* Ensure the child absolute positioning is relative to this container */
+}
+
+/* Styles for the description container when it's a sibling of the hovered image container */
+.card-container:hover .description-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
